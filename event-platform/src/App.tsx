@@ -24,14 +24,16 @@ export function App() {
   // }, [])
 
   const { data } = useQuery<{lessons: LessonProps[]}>(GET_LESSONS_QUERY)
-  console.log(data)
 
   return (
     <>
       <ul>
         {data?.lessons.map((lesson) => {
           return (
-            <li key={lesson.id} className="text-bold text-3xl text-violet-700">
+            <li 
+            key={lesson.id} 
+            className="text-bold text-3xl text-violet-700"
+            >
               {lesson.title}
             </li>
           )
