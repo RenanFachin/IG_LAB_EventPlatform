@@ -25,6 +25,9 @@ Este projeto foi desenvolvido utilizando:
     - [x] Apollo
     - [x] GraphCMS
 
+- Bibliotecas
+- [x] Phosphoricons
+
 
 ## Instalação e Ambiente de desenvolvimento
 ```bash
