@@ -26,7 +26,8 @@ Este projeto foi desenvolvido utilizando:
     - [x] GraphCMS
 
 - Bibliotecas
-- [x] Phosphoricons
+- [x] [Phosphoricons](https://phosphoricons.com/)
+- [x] [date-fns](https://date-fns.org/)
 
 
 ## Instalação e Ambiente de desenvolvimento
