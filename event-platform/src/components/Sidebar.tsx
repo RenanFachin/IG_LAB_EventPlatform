@@ -9,12 +9,12 @@ export function Sidebar() {
             </span>
 
             <div className="flex flex-col gap-8">
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
-                <Lesson />
+                <Lesson 
+                    title="Aula 01"
+                    slug="aula-01"
+                    avaibleAt={new Date()}
+                    type="class"
+                />
             </div>
         </aside>
     )
