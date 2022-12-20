@@ -29,6 +29,7 @@ Este projeto foi desenvolvido utilizando:
 - [x] [Phosphoricons](https://phosphoricons.com/)
 - [x] [date-fns](https://date-fns.org/)
 - [x] [vimejs](https://vimejs.com/)
+- [x] [react-router-dom](https://reactrouter.com/)
 
 
 ## Instalação e Ambiente de desenvolvimento
