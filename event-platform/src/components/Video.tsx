@@ -55,7 +55,6 @@ export function Video(props: VideoProps) {
         }
     })
 
-    // const data = false
 
     if(!data) {
         return (
