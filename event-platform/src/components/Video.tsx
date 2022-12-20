@@ -1,8 +1,11 @@
 import { Player, Youtube, DefaultUi } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 import { gql, useQuery } from "@apollo/client";
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 import '@vime/core/themes/default.css'
+import { useState } from "react";
 
 // QUERY NO GRAPHQL
 const GET_LESSON_BY_SLUG_QUERY = gql `
@@ -40,7 +43,10 @@ interface VideoProps {
     lessonSlug: string;
 }
 
+
 export function Video(props: VideoProps) {
+
+
     // Toda vez que o valor da propriedade for alterada na página EVENT será executada uma nova fetch na API
 
     const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY,{
@@ -54,7 +60,11 @@ export function Video(props: VideoProps) {
     if(!data) {
         return (
             <div className="flex-1 flex justify-center self-center">
-                <p>Carregando...</p>
+                <ClipLoader 
+                    color={'#0a4514'}
+                    loading={true}
+                    size={70}
+                />
             </div>
         )
     }

@@ -30,6 +30,7 @@ Este projeto foi desenvolvido utilizando:
 - [x] [date-fns](https://date-fns.org/)
 - [x] [vimejs](https://vimejs.com/)
 - [x] [react-router-dom](https://reactrouter.com/)
+- [x] [react-spinners](https://www.npmjs.com/package/react-spinners)
 
 
 ## Instalação e Ambiente de desenvolvimento
