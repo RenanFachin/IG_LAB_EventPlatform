@@ -28,6 +28,7 @@ Este projeto foi desenvolvido utilizando:
 - Bibliotecas
 - [x] [Phosphoricons](https://phosphoricons.com/)
 - [x] [date-fns](https://date-fns.org/)
+- [x] [vimejs](https://vimejs.com/)
 
 
 ## Instalação e Ambiente de desenvolvimento
