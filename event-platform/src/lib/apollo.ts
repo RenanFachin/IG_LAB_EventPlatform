@@ -2,6 +2,9 @@ import { ApolloClient } from "@apollo/client";
 import { InMemoryCache } from "@apollo/client/cache";
 
 export const client = new ApolloClient({
-    uri: 'https://api-sa-east-1.hygraph.com/v2/clbqx605f0e2801ukaaef57xc/master',
+    uri: import.meta.env.VITE_API_URL,
+    headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN}`
+    },
     cache: new InMemoryCache()
 })
