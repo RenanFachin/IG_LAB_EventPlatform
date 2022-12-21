@@ -28,7 +28,7 @@ Este projeto foi desenvolvido utilizando:
 - Bibliotecas
 - [x] [Phosphoricons](https://phosphoricons.com/)
 - [x] [date-fns](https://date-fns.org/)
-- [x] [vimejs](https://vimejs.com/)
+- [x] [react-player](https://www.npmjs.com/package/react-player)
 - [x] [react-router-dom](https://reactrouter.com/)
 - [x] [react-spinners](https://www.npmjs.com/package/react-spinners)
 - [x] [classnames](https://www.npmjs.com/package/classnames)

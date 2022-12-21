@@ -1,14 +1,14 @@
-import { Player, Youtube, DefaultUi } from "@vime/react";
+// import { Player, Youtube, DefaultUi } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 import { gql, useQuery } from "@apollo/client";
 import ClipLoader from "react-spinners/ClipLoader";
+import ReactPlayer from 'react-player'
 
+// import '@vime/core/themes/default.css'
 
-import '@vime/core/themes/default.css'
-import { useState } from "react";
 
 // QUERY NO GRAPHQL
-const GET_LESSON_BY_SLUG_QUERY = gql `
+const GET_LESSON_BY_SLUG_QUERY = gql`
     query GetLessonBySlug($slug: String) {
         lesson(where: {slug: $slug}){
             title
@@ -26,10 +26,10 @@ const GET_LESSON_BY_SLUG_QUERY = gql `
 // Tipando a resposta da query
 interface GetLessonBySlugResponse {
     lesson: {
-        title:string;
+        title: string;
         videoId: string;
         description: string;
-        teacher : {
+        teacher: {
             bio: string;
             avatarURL: string;
             name: string
@@ -46,20 +46,19 @@ interface VideoProps {
 
 export function Video(props: VideoProps) {
 
-
     // Toda vez que o valor da propriedade for alterada na página EVENT será executada uma nova fetch na API
 
-    const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY,{
+    const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
         variables: {
             slug: props.lessonSlug
         }
     })
 
 
-    if(!data) {
+    if (!data) {
         return (
             <div className="flex-1 flex justify-center self-center">
-                <ClipLoader 
+                <ClipLoader
                     color={'#0a4514'}
                     loading={true}
                     size={70}
@@ -68,15 +67,31 @@ export function Video(props: VideoProps) {
         )
     }
 
+
+
     return (
         <div className="flex-1">
             <div className="bg-gray-900 flex justify-center">
                 <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video bg-orange-500">
 
-                    <Player>
+                    {/* <Player>
                         <Youtube videoId={data.lesson.videoId} />
                         <DefaultUi />
-                    </Player>
+                    </Player> */}
+
+                    <ReactPlayer
+                        width="100%"
+                        height="100%"
+                        url={`https://www.youtube.com/watch?v=${data.lesson.videoId}`}
+                        controls
+                        muted
+                        config={{
+                            youtube: {
+                                playerVars: { showinfo: 1 }
+                            }
+                        }}
+                    />
+
 
                 </div>
             </div>
