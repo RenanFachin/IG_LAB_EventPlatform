@@ -1,8 +1,35 @@
+import { gql, useMutation } from '@apollo/client'
+import { useState, FormEvent } from 'react'
 import HomeImage from '../assets/code-mockup.png'
 import ReactIcon from '../assets/ReactJS icon.png'
 import { Logo } from '../components/Logo'
 
+const CREATE_SUBSCRIBE_MUTATION = gql `
+    mutation createSubscriber($name: String!, $email: String!) {
+        createSubscriber(data: {name: $name,  email: $email}) {
+        id
+        }
+    }
+`
+
 export function Subscribe(){
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+
+    const [createSubscriber] = useMutation(CREATE_SUBSCRIBE_MUTATION)
+
+    function handleSubscribe(event: FormEvent){
+        event.preventDefault()
+    
+        createSubscriber({
+            variables: {
+                name,
+                email
+            }
+        })
+    }
+
+
     return(
         <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center ">
 
@@ -31,18 +58,21 @@ export function Subscribe(){
                     </strong>
 
                     {/* obs: o form, por padrão, não ocupa 100% da width. Por isso o w-full */}
-                    <form action="" className='flex flex-col gap-2 w-full'>
+                    <form onSubmit={handleSubscribe} className='flex flex-col gap-2 w-full'>
 
                     <input 
                         className='bg-gray-900 rounded px-5 h-14'
                         type="text" 
                         placeholder='Seu nome completo'
+                        onChange={e => setName(e.target.value)}
+
                     />
 
                     <input 
                         className='bg-gray-900 rounded px-5 h-14'
                         type="email" 
                         placeholder='Digite o seu email'
+                        onChange={e => setEmail(e.target.value)}
                     />
 
                     <button 
