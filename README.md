@@ -31,6 +31,7 @@ Este projeto foi desenvolvido utilizando:
 - [x] [vimejs](https://vimejs.com/)
 - [x] [react-router-dom](https://reactrouter.com/)
 - [x] [react-spinners](https://www.npmjs.com/package/react-spinners)
+- [x] [classnames](https://www.npmjs.com/package/classnames)
 
 
 ## Instalação e Ambiente de desenvolvimento
